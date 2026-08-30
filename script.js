@@ -1,0 +1,1 @@
+document.querySelectorAll('.menu-toggle').forEach(b=>b.addEventListener('click',()=>document.querySelector('.mobile-menu')?.classList.toggle('open')));
