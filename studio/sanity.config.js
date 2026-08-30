@@ -1,0 +1,1 @@
+import {defineConfig} from 'sanity';import {deskTool} from 'sanity/desk';import project from './schemaTypes/project';import galleryItem from './schemaTypes/galleryItem';export default defineConfig({name:'default',title:'ARTNY CIVILS',projectId:process.env.SANITY_STUDIO_PROJECT_ID||'REPLACE_ME',dataset:'production',plugins:[deskTool()],schema:{types:[project,galleryItem]}});
