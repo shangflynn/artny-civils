@@ -5,9 +5,9 @@ window.ARTNY.meta('ARTNY CIVILS | Construction, Paving & Civil Works Johannesbur
 return `<main class="page-enter">
 <section class="cinema-hero">
   <div class="cinema-slides">
-    <div class="cinema-slide active"><img src="${IMG.crew}" alt="ARTNY CIVILS paving crew laying asphalt"></div>
-    <div class="cinema-slide"><img src="${IMG.roller}" alt="ARTNY CIVILS roller compacting asphalt"></div>
-    <div class="cinema-slide"><img src="${IMG.finish}" alt="Completed ARTNY CIVILS asphalt surface and road markings"></div>
+    <div class="cinema-slide active"><img src="${IMG.crew}" alt="ARTNY CIVILS paving crew laying asphalt" fetchpriority="high" decoding="async"></div>
+    <div class="cinema-slide"><img src="${IMG.roller}" alt="ARTNY CIVILS roller compacting asphalt" loading="lazy" decoding="async"></div>
+    <div class="cinema-slide"><img src="${IMG.finish}" alt="Completed ARTNY CIVILS asphalt surface and road markings" loading="lazy" decoding="async"></div>
   </div>
   <div class="cinema-overlay"></div>
   <div class="cinema-content">

@@ -20,3 +20,17 @@ html{background:var(--darker)}body{font-family:Inter,Arial,sans-serif;background
 @media(max-width:980px){.mobile-menu{background:rgba(8,8,10,.98);color:#fff;border-top:1px solid var(--steel)}.mobile-menu a{font-family:Archivo;font-size:34px;text-transform:none;border-color:var(--steel)}.service-card{min-height:280px}}
 @media(max-width:700px){:root{--header:64px}.shell,.cinema-content{width:calc(100% - 30px)}.home-route .site-header{top:0}.cinema-hero{height:100svh;min-height:660px}.cinema-content{padding-top:54px}.hero-tag{font-size:10px;letter-spacing:.11em;margin-bottom:16px}.cinema-content h1{font-size:clamp(50px,14vw,72px);max-width:94%;letter-spacing:-.055em}.cinema-content .hero-lead{font-size:16px;line-height:1.55;max-width:95%}.cinema-content .hero-actions{display:grid;width:100%;gap:9px}.cinema-content .hero-actions .btn{width:100%;min-height:52px}.cinema-overlay{background:linear-gradient(0deg,rgba(8,8,10,.92) 0%,rgba(8,8,10,.72) 48%,rgba(8,8,10,.32) 100%)}.cinema-dots{bottom:88px}.marquee span{font-size:13px;padding:11px 20px}.section{padding:70px 0}.services-grid{gap:13px}.service-card{min-height:235px;border-radius:18px}.work-speaks{height:72svh;min-height:540px}.work-content h2{font-size:clamp(42px,12vw,62px)}.work-content p{font-size:16px}.project-carousel{padding:0;overflow:visible}.project-track{gap:14px}.project-card-new{flex:0 0 86%;height:390px}.pc-arrow{display:none}.proof-panel{padding:26px}.desktop-whatsapp{display:none}.mobile-actions{z-index:2500}.mobile-actions a{font-size:14px}.page-hero{padding-top:90px}.gallery-strip button{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){.cinema-slide img,.desktop-whatsapp,.hero-tag,.cinema-content h1,.cinema-content .hero-lead,.cinema-content .hero-actions{animation:none!important;transition:none!important;transform:none!important}[data-reveal]{opacity:1;transform:none}.work-speaks img{transform:none}}
+
+
+/* Responsive quality pass */
+.desktop-whatsapp{font-size:14px;letter-spacing:-.03em}
+.desktop-whatsapp span{display:grid;place-items:center;width:100%;height:100%}
+@media (max-width:980px) and (min-width:701px){.home-route .mobile-menu{inset:var(--header) 0 0}}
+@media (max-width:700px){
+  .mobile-menu{overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+  .mobile-menu a{min-height:52px;display:flex;align-items:center;font-size:clamp(28px,9vw,36px)}
+  .cinema-content h1{font-size:clamp(42px,12vw,64px);line-height:.98}
+  .cinema-content .hero-lead{font-size:15px}
+  .cinema-content .btn{min-height:48px}
+  .mobile-actions a{gap:8px;min-width:0}
+}
