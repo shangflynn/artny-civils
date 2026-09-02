@@ -1,1 +1,0 @@
-export default {name:'galleryItem',title:'Gallery',type:'document',fields:[{name:'title',type:'string'},{name:'category',type:'string'},{name:'image',type:'image',options:{hotspot:true},validation:R=>R.required()},{name:'caption',type:'string'},{name:'order',type:'number'}]};
