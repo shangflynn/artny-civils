@@ -1,2295 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARTNY CIVILS — Construction, Paving, Painting & Civil Works in Johannesburg</title>
-    <meta name="description" content="ARTNY CIVILS is a professional construction and civil works company based in Johannesburg, Gauteng. Specialising in tar paving, brick paving, gate automation, painting, site clearance, and rubble removal for residential, commercial, and industrial clients.">
-    <meta name="keywords" content="construction Johannesburg, paving Turffontein, tar paving, brick paving, gate automation, painting services, site clearance, civil works, rubble removal, ARTNY CIVILS">
-    <meta name="author" content="ARTNY CIVILS">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="ARTNY CIVILS — Construction & Civil Works in Johannesburg">
-    <meta property="og:description" content="Professional construction and civil works company in Johannesburg. Tar paving, brick paving, gate automation, painting, site clearance and rubble removal.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_ZA">
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "GeneralContractor",
-        "name": "ARTNY CIVILS",
-        "description": "Professional construction and civil works company based in Johannesburg, Gauteng. Specialising in tar paving, brick paving, gate automation repairs and installations, painting services, and site clearance.",
-        "telephone": "+27734411697",
-        "email": "artnyam@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "46 W Turffontein Rd",
-            "addressLocality": "Johannesburg",
-            "addressRegion": "Gauteng",
-            "postalCode": "2091",
-            "addressCountry": "ZA"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -26.2476,
-            "longitude": 28.0224
-        },
-        "openingHours": "Mo-Fr 08:00-17:00",
-        "priceRange": "R",
-        "areaServed": "Johannesburg, Gauteng",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "1"
-        }
-    }
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Archivo:wght@600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-    /* ===== VARIABLES ===== */
-    :root {
-        --dark: #17212b;
-        --darker: #101820;
-        --charcoal: #ffffff;
-        --steel: #e5e7eb;
-        --light: #f8fafc;
-        --gray: #5b6470;
-        --gray-light: #d6dbe1;
-        --accent: #f59e0b;
-        --accent-dark: #d97706;
-        --accent-light: #fbbf24;
-        --white: #ffffff;
-        --whatsapp: #25d366;
-        --whatsapp-dark: #128c7e;
-        --radius: 12px;
-        --radius-lg: 20px;
-        --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        --transition-slow: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
-    }
-
-    /* ===== RESET ===== */
-    *, *::before, *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-        font-family: 'Inter', sans-serif;
-        background: #f7f8fa;
-        color: #20262d;
-        overflow-x: hidden;
-        line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    input, textarea, select { font-family: inherit; }
-
-    /* ===== NAVIGATION ===== */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-        padding: 1.2rem 0;
-        transition: var(--transition);
-        background: transparent;
-    }
-
-    .navbar.scrolled {
-        background: rgba(15, 15, 16, 0.95);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(245, 158, 11, 0.1);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .nav-logo {
-        display: flex;
-        flex-direction: column;
-        line-height: 1;
-    }
-
-    .logo-text {
-        font-family: 'Archivo', sans-serif;
-        font-weight: 900;
-        font-size: 1.5rem;
-        color: var(--white);
-        letter-spacing: -0.5px;
-    }
-
-    .logo-sub {
-        font-size: 0.7rem;
-        font-weight: 700;
-        color: var(--accent);
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        margin-top: 2px;
-    }
-
-    .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .nav-link {
-        color: var(--gray-light);
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: color var(--transition);
-        position: relative;
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--accent);
-        transition: width var(--transition);
-    }
-
-    .nav-link:hover, .nav-link.active {
-        color: var(--white);
-    }
-
-    .nav-link:hover::after, .nav-link.active::after {
-        width: 100%;
-    }
-
-    .nav-cta {
-        background: var(--accent);
-        color: var(--dark) !important;
-        padding: 0.6rem 1.5rem;
-        border-radius: 100px;
-        font-weight: 600;
-        transition: all var(--transition);
-    }
-
-    .nav-cta:hover {
-        background: var(--accent-light);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35);
-    }
-
-    .nav-cta::after { display: none; }
-
-    .nav-toggle {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        z-index: 1001;
-    }
-
-    .nav-toggle span {
-        width: 26px;
-        height: 2px;
-        background: var(--white);
-        transition: var(--transition);
-        border-radius: 2px;
-    }
-
-    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-    .nav-toggle.active span:nth-child(2) { opacity: 0; }
-    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-
-    /* ===== HERO ===== */
-    .hero {
-        position: relative;
-        height: 100vh;
-        min-height: 600px;
-        overflow: hidden;
-    }
-
-    .hero-slideshow {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .hero-slide {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        opacity: 0;
-        transition: opacity 1.2s ease-in-out, transform 6s ease-out;
-        transform: scale(1.05);
-    }
-
-    .hero-slide.active {
-        opacity: 1;
-        transform: scale(1);
-        z-index: 1;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(90deg, rgba(8, 14, 20, 0.72) 0%, rgba(8, 14, 20, 0.42) 52%, rgba(8, 14, 20, 0.20) 100%);
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    .hero-tag {
-        display: inline-block;
-        padding: 0.4rem 1rem;
-        background: rgba(245, 158, 11, 0.15);
-        border: 1px solid rgba(245, 158, 11, 0.3);
-        color: var(--accent);
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        border-radius: 100px;
-        margin-bottom: 1.5rem;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease forwards 0.3s;
-    }
-
-    .hero-title {
-        font-family: 'Archivo', sans-serif;
-        font-size: clamp(2.5rem, 6vw, 5rem);
-        font-weight: 900;
-        line-height: 1.05;
-        color: var(--white);
-        letter-spacing: -2px;
-        margin-bottom: 1.5rem;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease forwards 0.5s;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1rem, 2vw, 1.3rem);
-        color: var(--gray-light);
-        max-width: 540px;
-        margin-bottom: 2rem;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease forwards 0.7s;
-    }
-
-    .hero-cta-group {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease forwards 0.9s;
-    }
-
-    /* Slideshow Controls */
-    .slide-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-        transition: all var(--transition);
-    }
-
-    .slide-arrow:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--dark);
-        transform: translateY(-50%) scale(1.1);
-    }
-
-    .slide-arrow svg { width: 24px; height: 24px; }
-
-    .slide-prev { left: 2rem; }
-    .slide-next { right: 2rem; }
-
-    .slide-dots {
-        position: absolute;
-        bottom: 3rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 0.8rem;
-        z-index: 10;
-    }
-
-    .slide-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transition: all var(--transition);
-    }
-
-    .slide-dot.active {
-        background: var(--accent);
-        width: 30px;
-        border-radius: 5px;
-    }
-
-    .scroll-indicator {
-        position: absolute;
-        bottom: 1.5rem;
-        right: 2rem;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--gray);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-    .scroll-line {
-        width: 1px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.2);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .scroll-line::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: var(--accent);
-        animation: scrollDown 2s ease-in-out infinite;
-    }
-
-    @keyframes scrollDown {
-        0% { top: -50%; }
-        100% { top: 100%; }
-    }
-
-    /* ===== BUTTONS ===== */
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.9rem 2rem;
-        border-radius: 100px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        transition: all var(--transition);
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    .btn-primary {
-        background: var(--accent);
-        color: var(--dark);
-    }
-
-    .btn-primary:hover {
-        background: var(--accent-light);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(245, 158, 11, 0.4);
-    }
-
-    .btn-whatsapp {
-        background: var(--whatsapp);
-        color: var(--white);
-    }
-
-    .btn-whatsapp:hover {
-        background: var(--whatsapp-dark);
-        transform: translateY(-3px);
-        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
-    }
-
-    .btn-outline-light {
-        background: transparent;
-        color: var(--white);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-outline-light:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: var(--white);
-        transform: translateY(-3px);
-    }
-
-    .btn-full {
-        width: 100%;
-    }
-
-    /* ===== CLIENT TRUST STRIP ===== */
-    .client-trust-strip {
-        background: var(--darker);
-        padding: 1.5rem 0;
-        border-bottom: 1px solid rgba(245, 158, 11, 0.1);
-    }
-
-    .client-trust-inner {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .client-trust-inner > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2px;
-    }
-
-    .client-trust-inner strong {
-        color: var(--white);
-        font-size: 0.95rem;
-        font-weight: 700;
-    }
-
-    .client-trust-inner span {
-        color: var(--gray);
-        font-size: 0.8rem;
-    }
-
-    /* ===== SECTIONS ===== */
-    section {
-        padding: 6rem 0;
-    }
-
-    .section-header {
-        max-width: 720px;
-        margin: 0 auto 4rem;
-        padding: 0 2rem;
-        text-align: center;
-    }
-
-    .section-eyebrow {
-        display: inline-block;
-        color: var(--accent);
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 1rem;
-    }
-
-    .section-eyebrow.light { color: var(--accent-light); }
-
-    .section-title {
-        font-family: 'Archivo', sans-serif;
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        font-weight: 800;
-        color: #18212a;
-        line-height: 1.15;
-        letter-spacing: -1.5px;
-        margin-bottom: 1rem;
-    }
-
-    .section-desc {
-        font-size: 1.1rem;
-        color: var(--gray);
-        line-height: 1.6;
-    }
-
-    /* ===== SERVICES ===== */
-    .services {
-        background: #f7f8fa;
-    }
-
-    .service-photo-showcase {
-        max-width: 1280px;
-        margin: 0 auto 3rem;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .service-photo-showcase article {
-        height: 220px;
-        border-radius: var(--radius-lg);
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: flex-end;
-        padding: 1.5rem;
-    }
-
-    .service-photo-showcase article::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(transparent, rgba(8, 14, 20, 0.75));
-    }
-
-    .service-photo-showcase article span {
-        position: relative;
-        z-index: 2;
-        color: var(--white);
-        font-weight: 700;
-        font-size: 1.1rem;
-    }
-
-    .photo-disclaimer {
-        max-width: 1280px;
-        margin: 0 auto 3rem;
-        padding: 0 2rem;
-        text-align: center;
-        color: var(--gray);
-        font-size: 0.8rem;
-        font-style: italic;
-    }
-
-    .services-grid {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        background: var(--charcoal);
-        border: 1px solid var(--steel);
-        border-radius: var(--radius-lg);
-        padding: 2.5rem 2rem;
-        transition: all var(--transition);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .service-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform var(--transition);
-    }
-
-    .service-card:hover {
-        transform: translateY(-8px);
-        border-color: rgba(245, 158, 11, 0.3);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12), 0 0 30px rgba(245, 158, 11, 0.05);
-    }
-
-    .service-card:hover::before {
-        transform: scaleX(1);
-    }
-
-    .service-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: var(--radius);
-        background: rgba(245, 158, 11, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        transition: all var(--transition);
-    }
-
-    .service-card:hover .service-icon {
-        background: var(--accent);
-        transform: rotate(5deg) scale(1.1);
-    }
-
-    .service-icon svg {
-        width: 28px;
-        height: 28px;
-        color: var(--accent);
-        transition: color var(--transition);
-    }
-
-    .service-card:hover .service-icon svg {
-        color: var(--dark);
-    }
-
-    .service-card h3 {
-        font-family: 'Archivo', sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #18212a;
-        margin-bottom: 0.8rem;
-    }
-
-    .service-card p {
-        color: var(--gray);
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-    }
-
-    .service-link {
-        color: var(--accent);
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: all var(--transition);
-        display: inline-block;
-    }
-
-    .service-link:hover {
-        color: var(--accent-dark);
-        transform: translateX(4px);
-    }
-
-    /* ===== VISUAL BAND ===== */
-    .visual-band {
-        background: #f0f2f5;
-        padding: 5rem 0;
-    }
-
-    .visual-band-inner {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .visual-band-inner .section-eyebrow {
-        margin-bottom: 0.5rem;
-    }
-
-    .visual-band-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 1.5rem;
-        margin-top: 2.5rem;
-    }
-
-    .visual-tile {
-        height: 280px;
-        border-radius: var(--radius-lg);
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: flex-end;
-        padding: 2rem;
-        transition: all var(--transition);
-    }
-
-    .visual-tile:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .visual-tile::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(transparent 40%, rgba(8, 14, 20, 0.82));
-    }
-
-    .visual-tile-copy {
-        position: relative;
-        z-index: 2;
-    }
-
-    .visual-tile-copy h3 {
-        font-family: 'Archivo', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 0.4rem;
-    }
-
-    .visual-tile-copy p {
-        color: var(--gray-light);
-        font-size: 0.9rem;
-    }
-
-    /* ===== OUR WORK SPEAKS ===== */
-    .work-speaks {
-        padding: 0;
-        position: relative;
-    }
-
-    .work-fullscreen {
-        height: 90vh;
-        min-height: 500px;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        display: flex;
-        align-items: center;
-        position: relative;
-    }
-
-    .work-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(8, 14, 20, 0.18) 0%, rgba(8, 14, 20, 0.62) 100%);
-    }
-
-    .work-content {
-        position: relative;
-        z-index: 2;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        text-align: center;
-    }
-
-    .work-title {
-        font-family: 'Archivo', sans-serif;
-        font-size: clamp(2.5rem, 5vw, 4.5rem);
-        font-weight: 900;
-        color: var(--white);
-        line-height: 1.1;
-        letter-spacing: -2px;
-        margin: 1rem 0;
-    }
-
-    .work-subtitle {
-        font-size: 1.2rem;
-        color: var(--gray-light);
-        max-width: 600px;
-        margin: 0 auto 2rem;
-    }
-
-    /* ===== PROJECTS ===== */
-    .projects {
-        background: #eef1f4;
-        overflow: hidden;
-    }
-
-    .project-carousel {
-        position: relative;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        overflow: visible;
-    }
-
-    .project-track {
-        display: flex;
-        gap: 1.5rem;
-        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        cursor: grab;
-    }
-
-    .project-card {
-        flex: 0 0 calc((100% - 3rem) / 3);
-        height: 400px;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        transition: all var(--transition);
-    }
-
-    .project-image {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        transition: transform 0.8s ease;
-    }
-
-    .project-card:hover .project-image {
-        transform: scale(1.08);
-    }
-
-    .project-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem;
-        background: linear-gradient(transparent, rgba(8, 8, 10, 0.9));
-        transform: translateY(0);
-        transition: transform var(--transition);
-    }
-
-    .project-card:hover .project-overlay {
-        transform: translateY(-8px);
-    }
-
-    .project-overlay h3 {
-        font-family: 'Archivo', sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--white);
-        margin-bottom: 0.3rem;
-    }
-
-    .project-overlay p {
-        color: var(--gray-light);
-        font-size: 0.9rem;
-    }
-
-    .project-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--charcoal);
-        border: 1px solid var(--steel);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #18212a;
-        transition: all var(--transition);
-    }
-
-    .project-arrow:hover {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--dark);
-    }
-
-    .project-arrow svg { width: 24px; height: 24px; }
-
-    .project-prev { left: 2rem; }
-    .project-next { right: 2rem; }
-
-    /* ===== GALLERY ===== */
-    .gallery-section {
-        background: #f7f8fa;
-    }
-
-    .gallery-grid {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 200px;
-        gap: 1.5rem;
-    }
-
-    .gallery-card {
-        border-radius: var(--radius-lg);
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        overflow: hidden;
-        transition: all var(--transition);
-    }
-
-    .gallery-card:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-    .gallery-card:nth-child(4) { grid-column: span 2; }
-
-    .gallery-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .gallery-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(transparent 50%, rgba(8, 14, 20, 0.7));
-        opacity: 0;
-        transition: opacity var(--transition);
-    }
-
-    .gallery-card:hover::before {
-        opacity: 1;
-    }
-
-    .gallery-caption {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1.5rem;
-        color: var(--white);
-        font-weight: 600;
-        font-size: 0.95rem;
-        z-index: 2;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all var(--transition);
-    }
-
-    .gallery-card:hover .gallery-caption {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .note-strip {
-        max-width: 1280px;
-        margin: 2rem auto 0;
-        padding: 0 2rem;
-        text-align: center;
-        color: var(--gray);
-        font-size: 0.8rem;
-        font-style: italic;
-    }
-
-    /* ===== STATS ===== */
-    .stats-section {
-        background: var(--darker);
-        padding: 4rem 0;
-        border-top: 1px solid rgba(245, 158, 11, 0.1);
-        border-bottom: 1px solid rgba(245, 158, 11, 0.1);
-    }
-
-    .stats-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .stat-item {
-        padding: 1rem;
-    }
-
-    .stat-number {
-        font-family: 'Archivo', sans-serif;
-        font-size: clamp(3rem, 6vw, 4.5rem);
-        font-weight: 900;
-        color: var(--accent);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-        color: var(--gray);
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    /* ===== REVIEWS ===== */
-    .reviews {
-        background: #ffffff;
-    }
-
-    .reviews-grid {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .google-single-review {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-        padding: 3rem 2rem;
-    }
-
-    .google-single-review .section-eyebrow {
-        margin-bottom: 1rem;
-    }
-
-    .big-rating {
-        font-family: 'Archivo', sans-serif;
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: var(--accent);
-        margin-bottom: 1rem;
-    }
-
-    .google-single-review p {
-        color: var(--gray);
-        font-size: 1.05rem;
-        line-height: 1.7;
-        margin-bottom: 2rem;
-    }
-
-    /* ===== PARALLAX CTA ===== */
-    .parallax-cta {
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        text-align: center;
-        position: relative;
-    }
-
-    .parallax-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(8, 8, 10, 0.88) 0%, rgba(15, 15, 16, 0.75) 100%);
-    }
-
-    .parallax-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .parallax-content h2 {
-        font-family: 'Archivo', sans-serif;
-        font-size: clamp(2rem, 4vw, 3.5rem);
-        font-weight: 800;
-        color: var(--white);
-        margin-bottom: 1rem;
-        letter-spacing: -1px;
-    }
-
-    .parallax-content p {
-        font-size: 1.2rem;
-        color: var(--gray-light);
-        margin-bottom: 2rem;
-    }
-
-    .parallax-cta-group {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    /* ===== CONTACT ===== */
-    .contact {
-        background: #f3f5f7;
-    }
-
-    .contact-grid {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: start;
-    }
-
-    .contact-info .section-title {
-        text-align: left;
-    }
-
-    .contact-info .section-eyebrow {
-        margin-bottom: 0.5rem;
-    }
-
-    .contact-desc {
-        color: var(--gray);
-        font-size: 1.05rem;
-        margin-bottom: 2rem;
-        max-width: 460px;
-    }
-
-    .contact-details {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .contact-detail-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        transition: transform var(--transition);
-    }
-
-    .contact-detail-item:hover {
-        transform: translateX(4px);
-    }
-
-    .contact-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: var(--radius);
-        background: rgba(245, 158, 11, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .contact-icon svg {
-        width: 22px;
-        height: 22px;
-        color: var(--accent);
-    }
-
-    .contact-detail-label {
-        color: var(--gray);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .contact-detail-value {
-        color: #18212a;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
-    /* Form */
-    .contact-form-wrap {
-        background: var(--charcoal);
-        border: 1px solid var(--steel);
-        border-radius: var(--radius-lg);
-        padding: 2.5rem;
-    }
-
-    .form-title {
-        font-family: 'Archivo', sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #18212a;
-        margin-bottom: 1.5rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.2rem;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-        padding: 0.9rem 1.2rem;
-        background: #f7f8fa;
-        border: 1px solid var(--steel);
-        border-radius: var(--radius);
-        color: #18212a;
-        font-size: 0.95rem;
-        transition: all var(--transition);
-        outline: none;
-    }
-
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-        color: var(--gray);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
-    }
-
-    .form-group select {
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238a8a92' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 1rem center;
-    }
-
-    .form-group select option {
-        background: var(--charcoal);
-        color: #18212a;
-    }
-
-    .form-note {
-        text-align: center;
-        color: var(--gray);
-        font-size: 0.85rem;
-        margin-top: 1rem;
-    }
-
-    /* Map */
-    .map-container {
-        max-width: 1280px;
-        margin: 4rem auto 0;
-        padding: 0 2rem;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-        border: 1px solid var(--steel);
-    }
-
-    .map-container iframe {
-        display: block;
-        filter: none;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-        background: var(--darker);
-        border-top: 1px solid rgba(245, 158, 11, 0.1);
-        padding: 4rem 0 2rem;
-    }
-
-    .footer-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .footer-logo {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-    }
-
-    .footer-desc {
-        color: var(--gray);
-        font-size: 0.9rem;
-        line-height: 1.6;
-        max-width: 320px;
-    }
-
-    .footer-col h4 {
-        color: var(--white);
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 1.2rem;
-    }
-
-    .footer-col a, .footer-col p {
-        display: block;
-        color: var(--gray);
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-        transition: color var(--transition);
-    }
-
-    .footer-col a:hover {
-        color: var(--accent);
-    }
-
-    .footer-bottom {
-        max-width: 1280px;
-        margin: 3rem auto 0;
-        padding: 2rem 2rem 0;
-        border-top: 1px solid rgba(245, 158, 11, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .footer-bottom p {
-        color: var(--gray);
-        font-size: 0.85rem;
-    }
-
-    .footer-credit a:hover {
-        color: var(--accent-light);
-    }
-
-    /* ===== FLOATING WHATSAPP ===== */
-    .whatsapp-float {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        z-index: 999;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: var(--whatsapp);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        transition: all var(--transition);
-        animation: floatPulse 3s ease-in-out infinite;
-    }
-
-    .whatsapp-float:hover {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
-    }
-
-    @keyframes floatPulse {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-5px); }
-    }
-
-    /* ===== SCROLL ANIMATIONS ===== */
-    .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-        transition-delay: calc(var(--delay, 0) * 0.1s);
-    }
-
-    .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-        .project-card {
-            flex: 0 0 calc((100% - 1.5rem) / 2);
-        }
-        
-        .footer-container {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .gallery-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .gallery-card:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-        .gallery-card:nth-child(4) { grid-column: span 2; }
-    }
-
-    @media (max-width: 768px) {
-        .nav-links {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            height: 100vh;
-            background: var(--darker);
-            flex-direction: column;
-            justify-content: center;
-            gap: 1.5rem;
-            transition: right 0.5s ease;
-            padding: 2rem;
-        }
-        
-        .nav-links.open {
-            right: 0;
-        }
-        
-        .nav-toggle {
-            display: flex;
-        }
-        
-        .hero-content {
-            padding: 0 1.5rem;
-        }
-        
-        .slide-arrow {
-            display: none;
-        }
-        
-        .slide-dots {
-            bottom: 2rem;
-        }
-        
-        .scroll-indicator {
-            display: none;
-        }
-        
-        section {
-            padding: 4rem 0;
-        }
-        
-        .services-grid {
-            grid-template-columns: 1fr;
-            padding: 0 1.5rem;
-        }
-
-        .service-photo-showcase {
-            grid-template-columns: 1fr;
-            padding: 0 1.5rem;
-        }
-        
-        .work-fullscreen {
-            background-attachment: scroll;
-            height: 60vh;
-        }
-        
-        .project-card {
-            flex: 0 0 85%;
-        }
-
-        .visual-band-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .parallax-cta {
-            background-attachment: scroll;
-        }
-        
-        .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        .footer-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .footer-bottom {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .gallery-grid {
-            grid-template-columns: 1fr;
-            grid-auto-rows: 180px;
-        }
-
-        .gallery-card:nth-child(1),
-        .gallery-card:nth-child(4) {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-        
-        .map-container iframe {
-            height: 300px;
-        }
-        
-        .whatsapp-float {
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 52px;
-            height: 52px;
-        }
-
-        .client-trust-inner {
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-    }
-
-    /* ===== REDUCED MOTION ===== */
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-        
-        .hero-slide {
-            transition: opacity 0.3s ease;
-            transform: none !important;
-        }
-        
-        .reveal {
-            opacity: 1 !important;
-            transform: none !important;
-        }
-        
-        .whatsapp-float {
-            animation: none;
-        }
-        
-        .work-fullscreen,
-        .parallax-cta {
-            background-attachment: scroll !important;
-        }
-        
-        .scroll-line::after {
-            animation: none;
-        }
-    }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ARTNY CIVILS | Construction, Paving & Civil Works Johannesburg</title>
+<meta name="description" content="ARTNY CIVILS — professional tar paving, brick paving, road construction, tennis courts, concrete works, site clearance, gate automation, painting and civil construction in Johannesburg and Gauteng.">
+<meta name="keywords" content="tar paving Johannesburg, brick paving, road construction, civil works, concrete construction, tennis court construction, gate automation, site clearance, painting contractors, Johannesburg construction">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ARTNY CIVILS | Construction & Civil Works Johannesburg">
+<meta property="og:description" content="Professional construction, paving, and civil works in Johannesburg. Tar paving, brick paving, road construction, tennis courts, concrete, gate automation, painting.">
+<meta property="og:image" content="https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0b'/><text x='50' y='68' font-size='52' font-weight='bold' text-anchor='middle' fill='%23f59e0b'>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "ARTNY CIVILS",
+  "telephone": "+27 73 441 1697",
+  "email": "artnyam@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "46 West Turffontein Road",
+    "addressLocality": "Johannesburg South",
+    "addressRegion": "Gauteng",
+    "postalCode": "2091",
+    "addressCountry": "ZA"
+  },
+  "areaServed": "Johannesburg and surrounding Gauteng areas",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "4"
+  }
+}
+</script>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav id="navbar" class="navbar">
-    <div class="nav-container">
-        <a href="#home" class="nav-logo">
-            <span class="logo-text">ARTNY</span>
-            <span class="logo-sub">CIVILS</span>
-        </a>
-        <div class="nav-links" id="navLinks">
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#work" class="nav-link">Our Work</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#reviews" class="nav-link">Reviews</a>
-            <a href="#contact" class="nav-link">Contact</a>
-            <a href="#contact" class="nav-cta">Get a Quote</a>
-        </div>
-        <button class="nav-toggle" id="navToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</nav>
+<!-- Navigation -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">ARTNY <span>CIVILS</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="quote.html" class="nav-cta">Get a quote</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div class="mobile-menu">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="contact.html">Contact</a>
+  <a href="quote.html" class="nav-cta">Get a quote</a>
+</div>
 
-<!-- ===== HERO SLIDESHOW ===== -->
-<section id="home" class="hero">
-    <div class="hero-slideshow">
-        <div class="hero-slide active" style="background-image: url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-tag">Construction & Renovations</div>
-                <h1 class="hero-title">Built properly.<br>Finished professionally.</h1>
-                <p class="hero-subtitle">From foundations to finishing touches — quality workmanship you can rely on.</p>
-                <div class="hero-cta-group">
-                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                    <a href="https://wa.me/27734411697" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1595208818888-2c0a4e85f4e3?w=1920&q=80')">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-tag">Paving & Exterior Work</div>
-                <h1 class="hero-title">Transforming spaces<br>from the ground up.</h1>
-                <p class="hero-subtitle">Tar and brick paving done right — proper base, clean edges, lasting results.</p>
-                <div class="hero-cta-group">
-                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                    <a href="https://wa.me/27734411697" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide" style="background-image: url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-tag">Painting & Finishing</div>
-                <h1 class="hero-title">Clean finishes that<br>change the entire space.</h1>
-                <p class="hero-subtitle">Interior and exterior painting — neat, durable, professional.</p>
-                <div class="hero-cta-group">
-                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                    <a href="https://wa.me/27734411697" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1920&q=80')">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-tag">Gate Automation & Repairs</div>
-                <h1 class="hero-title">Practical solutions.<br>Reliable workmanship.</h1>
-                <p class="hero-subtitle">Gate motor repairs and installations done right the first time.</p>
-                <div class="hero-cta-group">
-                    <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                    <a href="https://wa.me/27734411697" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp Us</a>
-                </div>
-            </div>
-        </div>
+<!-- Home Hero -->
+<section class="home-hero">
+  <div class="home-hero-bg">
+    <div class="hero-slide active" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80')"></div>
+    <div class="hero-slide" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')"></div>
+  </div>
+  <div class="home-hero-content">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        JOHANNESBURG · CONSTRUCTION & CIVIL WORKS
+      </div>
+      <h1>Built properly. <span>Finished professionally.</span></h1>
+      <p>Tar and asphalt paving, road construction, tennis courts, concrete works, site clearance, gate automation, exterior painting and comprehensive civil construction services across Johannesburg and Gauteng.</p>
+      <div class="hero-buttons">
+        <a href="quote.html" class="btn btn-primary btn-lg">Get a free quote</a>
+        <a href="https://wa.me/27734411697" class="btn btn-outline btn-lg">WhatsApp us</a>
+        <a href="projects.html" class="btn btn-outline btn-lg">See our work</a>
+      </div>
     </div>
-    
-    <button class="slide-arrow slide-prev" id="slidePrev" aria-label="Previous slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
-    <button class="slide-arrow slide-next" id="slideNext" aria-label="Next slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
-    
-    <div class="slide-dots" id="slideDots">
-        <button class="slide-dot active" data-slide="0" aria-label="Slide 1"></button>
-        <button class="slide-dot" data-slide="1" aria-label="Slide 2"></button>
-        <button class="slide-dot" data-slide="2" aria-label="Slide 3"></button>
-        <button class="slide-dot" data-slide="3" aria-label="Slide 4"></button>
-    </div>
-    
-    <div class="scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-    </div>
+  </div>
+  <div class="hero-slideshow-dots">
+    <div class="hero-dot active"></div>
+    <div class="hero-dot"></div>
+    <div class="hero-dot"></div>
+  </div>
 </section>
 
-<!-- ===== CLIENT TRUST STRIP ===== -->
-<section class="client-trust-strip" aria-label="ARTNY CIVILS service highlights">
-    <div class="client-trust-inner">
-        <div><strong>Johannesburg</strong><span>Gauteng based</span></div>
-        <div><strong>Residential</strong><span>Home & property work</span></div>
-        <div><strong>Commercial</strong><span>Business & site projects</span></div>
-        <div><strong>WhatsApp Quotes</strong><span>073 441 1697</span></div>
-    </div>
-</section>
-
-<!-- ===== SERVICES ===== -->
-<section id="services" class="services">
-    <div class="section-header reveal">
-        <div class="section-eyebrow">What We Do</div>
-        <h2 class="section-title">Construction services for homes, businesses & sites</h2>
-        <p class="section-desc">Practical construction and civil services with clear communication, straightforward quoting and a focus on reliable workmanship.</p>
-    </div>
-    
-    <div class="service-photo-showcase">
-        <article style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')"><span>Tar & Asphalt Paving</span></article>
-        <article style="background-image:url('https://images.unsplash.com/photo-1595208818888-2c0a4e85f4e3?w=800&q=80')"><span>Brick Paving</span></article>
-        <article style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')"><span>Construction & Renovation</span></article>
-        <article style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80')"><span>Gate Automation</span></article>
-    </div>
-    <div class="photo-disclaimer">Representative service imagery shown for presentation purposes. Contact us for current project references.</div>
-
-    <div class="services-grid">
-        <div class="service-card reveal" style="--delay: 0">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-8h6v8"/></svg>
-            </div>
-            <h3>Tar Paving</h3>
-            <p>Driveways, parking lots, access roads. Sized to match your traffic load — residential to industrial.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-        <div class="service-card reveal" style="--delay: 1">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-            </div>
-            <h3>Brick Paving</h3>
-            <p>Interlocking bricks on a compacted foundation. No shifting, no sinking, no callbacks.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-        <div class="service-card reveal" style="--delay: 2">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            </div>
-            <h3>Gate Automation</h3>
-            <p>Repairs and installations for automatic gates. Working in a single visit where possible.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-        <div class="service-card reveal" style="--delay: 3">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 11h2v2h-2zM5 11h2v2H5zM12 5V3M5.5 7.5L4 6M18.5 7.5L20 6M12 21V11M7 21h10"/></svg>
-            </div>
-            <h3>Painting Services</h3>
-            <p>Interior and exterior painting. Clean finishes that change the entire space.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-        <div class="service-card reveal" style="--delay: 4">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18M7 3v18M17 3v18"/></svg>
-            </div>
-            <h3>Site Preparation</h3>
-            <p>Old concrete, rubble, overgrowth — cleared before a single stone is laid. Clean slate, solid start.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-        <div class="service-card reveal" style="--delay: 5">
-            <div class="service-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6l9-3 9 3v12l-9 3-9-3V6M3 6l9 3M21 6l-9 3M12 9v12"/></svg>
-            </div>
-            <h3>Rubble Removal</h3>
-            <p>Responsible removal of construction waste and rubble. Site left clean and ready.</p>
-            <a href="#contact" class="service-link">Get a Quote →</a>
-        </div>
-    </div>
-</section>
-
-<!-- ===== VISUAL BAND ===== -->
-<section class="visual-band" aria-label="Service examples">
-    <div class="visual-band-inner">
-        <div class="section-eyebrow">See The Difference</div>
-        <h2 class="section-title" style="text-align:left;max-width:760px">More than a list of services — see the kind of work we do.</h2>
-        <p class="section-desc" style="max-width:760px">A visual overview of the services ARTNY CIVILS provides across Johannesburg and surrounding areas.</p>
-        <div class="visual-band-grid">
-            <article class="visual-tile" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')">
-                <div class="visual-tile-copy"><h3>Construction & Site Work</h3><p>Preparation, building and civil work for residential and commercial sites.</p></div>
-            </article>
-            <article class="visual-tile" style="background-image:url('https://images.unsplash.com/photo-1595208818888-2c0a4e85f4e3?w=800&q=80')">
-                <div class="visual-tile-copy"><h3>Renovation & Finishing</h3><p>Upgrades, repairs and finishes that make properties feel complete.</p></div>
-            </article>
-            <article class="visual-tile" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')">
-                <div class="visual-tile-copy"><h3>Painting & Exterior Work</h3><p>Interior and exterior finishing for homes and business premises.</p></div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- ===== OUR WORK SPEAKS ===== -->
-<section id="work" class="work-speaks">
-    <div class="work-fullscreen" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80')">
-        <div class="work-overlay"></div>
-        <div class="work-content reveal">
-            <div class="section-eyebrow light">Our Work Speaks First</div>
-            <h2 class="work-title">Paving. Building. Painting.<br>Site work. One team.</h2>
-            <p class="work-subtitle">From driveway paving and site preparation to painting and gate automation, ARTNY CIVILS provides practical property and civil-work solutions in Johannesburg.</p>
-            <a href="#projects" class="btn btn-outline-light">See Our Projects</a>
-        </div>
-    </div>
-</section>
-
-<!-- ===== PROJECTS SHOWCASE ===== -->
-<section id="projects" class="projects">
-    <div class="section-header reveal">
-        <div class="section-eyebrow">What We Build</div>
-        <h2 class="section-title">Construction, paving and property work</h2>
-        <p class="section-desc">Explore the types of work ARTNY CIVILS can assist with across residential, commercial and industrial properties in Johannesburg and surrounding areas.</p>
-    </div>
-    
-    <div class="project-carousel" id="projectCarousel">
-        <div class="project-track" id="projectTrack">
-            <div class="project-card" data-project="0">
-                <div class="project-image" style="background-image: url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')">
-                    <div class="project-overlay">
-                        <h3>Tar Paving</h3>
-                        <p>Driveways, parking areas and access surfaces</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-project="1">
-                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1595208818888-2c0a4e85f4e3?w=800&q=80')">
-                    <div class="project-overlay">
-                        <h3>Brick Paving</h3>
-                        <p>Driveways, paths and outdoor areas</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-project="2">
-                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80')">
-                    <div class="project-overlay">
-                        <h3>Commercial Paving</h3>
-                        <p>Parking areas and larger paved surfaces</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-project="3">
-                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1605152276897-4df218d7c0df?w=800&q=80')">
-                    <div class="project-overlay">
-                        <h3>Gate Automation</h3>
-                        <p>Gate motor repairs and installations</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-project="4">
-                <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1562259949-840b3336f5d2?w=800&q=80')">
-                    <div class="project-overlay">
-                        <h3>Painting & Finishing</h3>
-                        <p>Interior and exterior painting</p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card" data-project="5">
-                <div class="project-image" style="background-image: url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')">
-                    <div class="project-overlay">
-                        <h3>Site Preparation</h3>
-                        <p>Clearance, rubble removal and preparation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="project-arrow project-prev" id="projectPrev" aria-label="Previous project">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button class="project-arrow project-next" id="projectNext" aria-label="Next project">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-    </div>
-</section>
-
-<!-- ===== GALLERY ===== -->
-<section class="gallery-section" id="gallery">
-    <div class="section-header reveal">
-        <div class="section-eyebrow">Services In Action</div>
-        <h2 class="section-title">See the kind of work we take on</h2>
-        <p class="section-desc">From paving and painting to site preparation, renovations and civil works, ARTNY CIVILS handles practical projects from start to finish.</p>
-    </div>
-    <div class="gallery-grid">
-        <div class="gallery-card" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')"><div class="gallery-caption">Construction & development</div></div>
-        <div class="gallery-card" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1000&q=80')"><div class="gallery-caption">Property improvement</div></div>
-        <div class="gallery-card" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7df9?w=1000&q=80')"><div class="gallery-caption">Site & technical work</div></div>
-        <div class="gallery-card" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')"><div class="gallery-caption">Civil works & site preparation</div></div>
-        <div class="gallery-card" style="background-image:url('https://images.unsplash.com/photo-1562259949-840b3336f5d2?w=1100&q=80')"><div class="gallery-caption">Painting & finishing</div></div>
-        <div class="gallery-card" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb1922795?w=1100&q=80')"><div class="gallery-caption">Building & renovations</div></div>
-    </div>
-    <p class="note-strip">Service photography shown for illustration. Ask us for current project references and recent work examples.</p>
-</section>
-
-<!-- ===== STATS ===== -->
+<!-- Stats -->
 <section class="stats-section">
-    <div class="stats-container">
-        <div class="stat-item reveal">
-            <div class="stat-number" data-target="6" data-suffix="">0</div>
-            <div class="stat-label">Core Services</div>
-        </div>
-        <div class="stat-item reveal" style="--delay: 1">
-            <div class="stat-number" data-target="1" data-suffix="+">0</div>
-            <div class="stat-label">Straight Quote Policy</div>
-        </div>
-        <div class="stat-item reveal" style="--delay: 2">
-            <div class="stat-number" data-target="3" data-suffix="">0</div>
-            <div class="stat-label">Client Sectors</div>
-        </div>
-        <div class="stat-item reveal" style="--delay: 3">
-            <div class="stat-number" data-target="5" data-suffix=".0">0</div>
-            <div class="stat-label">Google Review Rating</div>
-        </div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="fade-up">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-number" data-target="9">0</div>
+        <div class="stat-label">Specialised Services</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-number">5.0</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="fade-up">
+        <div class="stat-number" data-target="5">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ===== REVIEWS ===== -->
-<section id="reviews" class="reviews">
-    <div class="section-header reveal">
-        <div class="section-eyebrow">Customer Reviews</div>
-        <h2 class="section-title">What clients say</h2>
-        <p class="section-desc">No hidden extras, no surprise fees. Arthur gives you a clear price for the whole job before any work starts.</p>
+<!-- Services Preview -->
+<section class="section">
+  <div class="container">
+    <div class="section-center fade-up">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-subtitle">Comprehensive construction and civil works solutions delivered to professional standards across Johannesburg and Gauteng.</p>
     </div>
-    
-    <div class="google-single-review reveal">
-        <div class="section-eyebrow">Google Business Profile</div>
-        <div class="big-rating">5.0 ★</div>
-        <p>ARTNY CIVILS currently holds a 5.0 Google rating from verified customer reviews. Contact us for project references and recent work examples.</p>
-        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/a4b10200d_7f8ce121c_whatsapp_image_4548160985329837.jpg')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🛣️</div>
+          <h3>Tar & Asphalt Paving</h3>
+          <p>Professional tar surfacing for driveways, parking areas, roads and commercial surfaces. Durable, smooth finishes built to last.</p>
+          <a href="tar-paving.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1585421514738-017648f6f5d9?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🧱</div>
+          <h3>Brick Paving</h3>
+          <p>Decorative and functional brick paving for driveways, walkways, patios and commercial spaces. Various patterns and finishes available.</p>
+          <a href="brick-paving.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🚧</div>
+          <h3>Road Construction</h3>
+          <p>Road building and construction services for residential estates, commercial developments and municipal projects across Gauteng.</p>
+          <a href="road-construction.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1544150803-9d60b4f3e3e1?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🎾</div>
+          <h3>Tennis Court Construction</h3>
+          <p>Professional tennis court construction and resurfacing. Proper base preparation, surface installation and line marking.</p>
+          <a href="tennis-courts.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🏗️</div>
+          <h3>Concrete Works</h3>
+          <p>Concrete foundations, slabs, retaining walls and structural concrete work. Quality formwork, reinforcement and finishing.</p>
+          <a href="concrete-works.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🚪</div>
+          <h3>Gate Automation</h3>
+          <p>Installation and repair of automated gate systems. Sliding gates, swing gates, motors, intercoms and access control.</p>
+          <a href="gate-automation.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1562259949-840b3336f5d2?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🎨</div>
+          <h3>Exterior Painting</h3>
+          <p>Professional exterior painting for buildings, walls and structures. Weather-resistant finishes that protect and enhance.</p>
+          <a href="painting.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🚜</div>
+          <h3>Site Clearance</h3>
+          <p>Site clearance, rubble removal and ground preparation for construction projects. Efficient, thorough and reliable.</p>
+          <a href="site-clearance.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-card-img" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80')"></div>
+        <div class="service-card-body">
+          <div class="service-card-icon">🏭</div>
+          <h3>Industrial & Commercial</h3>
+          <p>Civil works and construction services for industrial and commercial clients. Large-scale projects delivered to specification.</p>
+          <a href="commercial-industrial.html" class="service-card-link">Learn more →</a>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ===== PARALLAX CTA ===== -->
-<section class="parallax-cta" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80')">
-    <div class="parallax-overlay"></div>
-    <div class="parallax-content reveal">
-        <h2>A straight quote for your paving job</h2>
-        <p>Tell us what needs doing. We'll assess the scope, provide a clear quote and help you plan the next step.</p>
-        <div class="parallax-cta-group">
-            <a href="#contact" class="btn btn-primary">Request Your Quote</a>
-            <a href="tel:0734411697" class="btn btn-outline-light">Call 073 441 1697</a>
-        </div>
+<!-- About Preview -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-up" style="background-image:url('https://base44.app/api/apps/6a956cb34fec8b0d7fdfa13a/files/mp/public/6a956cb34fec8b0d7fdfa13a/81bde51ab_3e45ba984_whatsapp_image_1262420662657000.jpg')"></div>
+      <div class="about-content fade-up">
+        <h2>Built on quality. <span style="color:var(--accent)">Driven by results.</span></h2>
+        <p>ARTNY CIVILS is a Johannesburg-based construction and civil works company serving residential, commercial and industrial clients across Gauteng. We specialise in paving, road construction, concrete works and a full range of civil construction services.</p>
+        <p>From the first site visit to final handover, we work to professional standards — proper ground preparation, quality materials and clean finishes. Every project gets the same attention to detail, regardless of size.</p>
+        <ul class="about-features">
+          <li>Free site assessments and competitive quotes</li>
+          <li>Experienced team with proper equipment</li>
+          <li>All work completed to specification</li>
+          <li>Serving Johannesburg and surrounding Gauteng areas</li>
+        </ul>
+        <a href="about.html" class="btn btn-primary">More about us</a>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact" class="contact">
-    <div class="contact-grid">
-        <div class="contact-info reveal">
-            <div class="section-eyebrow">Get in Touch</div>
-            <h2 class="section-title">Need a quote on your paving job?</h2>
-            <p class="contact-desc">Call 073 441 1697, send a WhatsApp message, or complete the form to request a quote.</p>
-            <div class="contact-details">
-                <a href="tel:0734411697" class="contact-detail-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div>
-                        <div class="contact-detail-label">Phone</div>
-                        <div class="contact-detail-value">073 441 1697</div>
-                    </div>
-                </a>
-                <a href="mailto:artnyam@gmail.com" class="contact-detail-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div>
-                        <div class="contact-detail-label">Email</div>
-                        <div class="contact-detail-value">artnyam@gmail.com</div>
-                    </div>
-                </a>
-                <div class="contact-detail-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div>
-                        <div class="contact-detail-label">Address</div>
-                        <div class="contact-detail-value">46 W Turffontein Rd, Johannesburg, 2091</div>
-                    </div>
-                </div>
-                <div class="contact-detail-item">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div>
-                        <div class="contact-detail-label">Hours</div>
-                        <div class="contact-detail-value">Open · Closes 5 PM</div>
-                    </div>
-                </div>
-            </div>
-            <a href="https://wa.me/27734411697" class="btn btn-whatsapp btn-full" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                Chat on WhatsApp
-            </a>
-        </div>
-        
-        <div class="contact-form-wrap reveal" style="--delay: 1">
-            <form class="contact-form" id="quoteForm">
-                <h3 class="form-title">Request a Quote</h3>
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Your email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
-                </div>
-                <div class="form-group">
-                    <select id="service" name="service" required>
-                        <option value="" disabled selected>What service are you looking for?</option>
-                        <option value="tar-paving">Tar Paving</option>
-                        <option value="brick-paving">Brick Paving</option>
-                        <option value="gate-automation">Gate Automation</option>
-                        <option value="painting">Painting Services</option>
-                        <option value="site-clearance">Site Preparation</option>
-                        <option value="rubble-removal">Rubble Removal</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Tell us about your project..." rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Get Your Quote</button>
-                <p class="form-note">Submit your details and ARTNY CIVILS will contact you about your quote.</p>
-            </form>
-        </div>
+<!-- Process -->
+<section class="section">
+  <div class="container">
+    <div class="section-center fade-up">
+      <h2 class="section-title">How We <span>Work</span></h2>
+      <p class="section-subtitle">A straightforward process from enquiry to completion — no surprises, no shortcuts.</p>
     </div>
-    
-    <div class="map-container reveal">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.9!2d28.0224!3d-26.2476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDE0JzUxLjQiUyAyOMKwMDEnMjAuNiJF!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
-            width="100%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="ARTNY CIVILS Location — 46 W Turffontein Rd, Johannesburg">
-        </iframe>
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-number">1</div>
+        <h4>Site Visit</h4>
+        <p>We assess the site, discuss requirements and take measurements.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">2</div>
+        <h4>Quote</h4>
+        <p>Detailed, transparent pricing with no hidden costs.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">3</div>
+        <h4>Construction</h4>
+        <p>Professional execution using quality materials and equipment.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-number">4</div>
+        <h4>Handover</h4>
+        <p>Final inspection, clean-up and project handover.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- Testimonials Preview -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-center fade-up">
+      <h2 class="section-title">What Clients <span>Say</span></h2>
+      <p class="section-subtitle">Real feedback from clients we've worked with across Johannesburg.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"ARTNY CIVILS paved our driveway and the finish is excellent. Professional team, arrived on time and cleaned up properly afterwards."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">John Mokoena</div>
+            <div class="testimonial-role">Residential client, Johannesburg South</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Excellent work on our commercial parking area. The tar surface is smooth and properly finished. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div>
+            <div class="testimonial-name">Priya Naidoo</div>
+            <div class="testimonial-role">Business owner, Johannesburg</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Reliable and skilled. They handled our site clearance and concrete works efficiently. Good communication throughout the project."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">David Nkosi</div>
+            <div class="testimonial-role">Property developer, Gauteng</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="fade-up">
+      <a href="feedback.html" class="btn btn-outline">Read all reviews</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to start your project?</h2>
+    <p>Get a free, no-obligation quote today. Call us or send a WhatsApp message.</p>
+    <div class="cta-buttons">
+      <a href="quote.html" class="btn btn-primary btn-lg">Get a free quote</a>
+      <a href="https://wa.me/27734411697" class="btn btn-outline btn-lg">WhatsApp us</a>
+      <a href="tel:+27734411697" class="btn btn-outline btn-lg">Call 073 441 1697</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
-    <div class="footer-container">
-        <div class="footer-col">
-            <a href="#home" class="footer-logo">
-                <span class="logo-text">ARTNY</span>
-                <span class="logo-sub">CIVILS</span>
-            </a>
-            <p class="footer-desc">Professional construction and civil works company based in Johannesburg, Gauteng. Quality workmanship, reliability, and customer satisfaction.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Services</h4>
-            <a href="#services">Tar Paving</a>
-            <a href="#services">Brick Paving</a>
-            <a href="#services">Gate Automation</a>
-            <a href="#services">Painting</a>
-            <a href="#services">Site Preparation</a>
-            <a href="#services">Rubble Removal</a>
-        </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="tel:0734411697">073 441 1697</a>
-            <a href="mailto:artnyam@gmail.com">artnyam@gmail.com</a>
-            <p>46 W Turffontein Rd<br>Johannesburg, 2091</p>
-            <p>Open · Closes 5 PM</p>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact">Get a Quote</a>
-        </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ARTNY <span>CIVILS</span></div>
+        <p class="footer-desc">Construction, paving and civil works in Johannesburg and surrounding Gauteng areas. Professional service from site visit to handover.</p>
+        <p style="margin-top:12px"><a href="tel:+27734411697" style="color:var(--text);font-weight:600">073 441 1697</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="tar-paving.html">Tar Paving</a></li>
+          <li><a href="brick-paving.html">Brick Paving</a></li>
+          <li><a href="road-construction.html">Road Construction</a></li>
+          <li><a href="concrete-works.html">Concrete Works</a></li>
+          <li><a href="gate-automation.html">Gate Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="tennis-courts.html">Tennis Courts</a></li>
+          <li><a href="painting.html">Painting</a></li>
+          <li><a href="site-clearance.html">Site Clearance</a></li>
+          <li><a href="commercial-industrial.html">Commercial</a></li>
+          <li><a href="services.html">All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 ARTNY CIVILS. All rights reserved. Construction & Civil Works — Johannesburg, Gauteng.</p>
-        <p class="footer-credit">Website by <a href="#" style="color: var(--accent); text-decoration: none;">DRIBLEZ</a></p>
+      <span>© 2026 ARTNY CIVILS. All rights reserved.</span>
+      <span class="footer-credit">Built by <a href="https://driblez.co.za">DRIBLEZ</a></span>
     </div>
+  </div>
 </footer>
 
-<!-- ===== FLOATING WHATSAPP ===== -->
-<a href="https://wa.me/27734411697" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/27734411697" class="whatsapp-float" aria-label="WhatsApp ARTNY CIVILS">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script>
-// ===== NAVBAR SCROLL =====
-const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
+<!-- Mobile Actions -->
+<div class="mobile-actions">
+  <a href="tel:+27734411697" class="call-btn">📞 Call</a>
+  <a href="https://wa.me/27734411697" class="wa-btn">WhatsApp</a>
+</div>
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    const sections = document.querySelectorAll('section[id]');
-    let current = '';
-    sections.forEach(section => {
-        const top = section.offsetTop - 100;
-        if (window.scrollY >= top) {
-            current = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ===== MOBILE MENU =====
-const navToggle = document.getElementById('navToggle');
-const navLinksContainer = document.getElementById('navLinks');
-
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinksContainer.classList.toggle('open');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinksContainer.classList.remove('open');
-    });
-});
-
-// ===== HERO SLIDESHOW =====
-const slides = document.querySelectorAll('.hero-slide');
-const dots = document.querySelectorAll('.slide-dot');
-const prevBtn = document.getElementById('slidePrev');
-const nextBtn = document.getElementById('slideNext');
-let currentSlide = 0;
-let slideInterval;
-
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const slideDuration = prefersReducedMotion ? 3000 : 6000;
-
-function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = (index + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-}
-
-function nextSlide() { goToSlide(currentSlide + 1); }
-function prevSlide() { goToSlide(currentSlide - 1); }
-
-function startSlideshow() {
-    slideInterval = setInterval(nextSlide, slideDuration);
-}
-
-function stopSlideshow() {
-    clearInterval(slideInterval);
-}
-
-nextBtn.addEventListener('click', () => { stopSlideshow(); nextSlide(); startSlideshow(); });
-prevBtn.addEventListener('click', () => { stopSlideshow(); prevSlide(); startSlideshow(); });
-
-dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => { stopSlideshow(); goToSlide(i); startSlideshow(); });
-});
-
-startSlideshow();
-
-// ===== PROJECT CAROUSEL =====
-const track = document.getElementById('projectTrack');
-const projectPrev = document.getElementById('projectPrev');
-const projectNext = document.getElementById('projectNext');
-let projectIndex = 0;
-
-function getProjectStep() {
-    const card = track.querySelector('.project-card');
-    if (!card) return 0;
-    return card.offsetWidth + 24;
-}
-
-function getMaxIndex() {
-    const cards = track.querySelectorAll('.project-card');
-    const trackWidth = track.offsetWidth;
-    let visible = 0;
-    let totalWidth = 0;
-    const card = cards[0];
-    if (!card) return 0;
-    const cardWidth = card.offsetWidth;
-    
-    while (totalWidth + cardWidth <= trackWidth && visible < cards.length) {
-        totalWidth += cardWidth + 24;
-        visible++;
-    }
-    return Math.max(0, cards.length - visible);
-}
-
-function updateProjectCarousel() {
-    const step = getProjectStep();
-    track.style.transform = `translateX(-${projectIndex * step}px)`;
-}
-
-projectNext.addEventListener('click', () => {
-    const maxIndex = getMaxIndex();
-    projectIndex = projectIndex < maxIndex ? projectIndex + 1 : 0;
-    updateProjectCarousel();
-});
-
-projectPrev.addEventListener('click', () => {
-    const maxIndex = getMaxIndex();
-    projectIndex = projectIndex > 0 ? projectIndex - 1 : maxIndex;
-    updateProjectCarousel();
-});
-
-// Touch/swipe for project carousel
-let touchStartX = 0;
-let touchEndX = 0;
-
-track.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-}, { passive: true });
-
-track.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 50) {
-        const maxIndex = getMaxIndex();
-        if (diff > 0) {
-            projectIndex = projectIndex < maxIndex ? projectIndex + 1 : 0;
-        } else {
-            projectIndex = projectIndex > 0 ? projectIndex - 1 : maxIndex;
-        }
-        updateProjectCarousel();
-    }
-}, { passive: true });
-
-window.addEventListener('resize', updateProjectCarousel);
-
-// ===== SCROLL REVEAL =====
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-revealElements.forEach(el => revealObserver.observe(el));
-
-// ===== ANIMATED COUNTERS =====
-const counters = document.querySelectorAll('.stat-number');
-
-function animateCounter(el) {
-    const target = parseFloat(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    const duration = prefersReducedMotion ? 0 : 2000;
-    const startTime = performance.now();
-
-    function update(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const value = target * eased;
-        
-        if (target % 1 === 0) {
-            el.textContent = Math.floor(value) + suffix;
-        } else {
-            el.textContent = value.toFixed(1) + suffix;
-        }
-        
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        } else {
-            el.textContent = target + suffix;
-        }
-    }
-
-    if (duration === 0) {
-        el.textContent = target + suffix;
-    } else {
-        requestAnimationFrame(update);
-    }
-}
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-counters.forEach(c => counterObserver.observe(c));
-
-// ===== QUOTE FORM → WHATSAPP =====
-const quoteForm = document.getElementById('quoteForm');
-
-quoteForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const email = document.getElementById('email').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
-    
-    const serviceLabels = {
-        'tar-paving': 'Tar Paving',
-        'brick-paving': 'Brick Paving',
-        'gate-automation': 'Gate Automation',
-        'painting': 'Painting Services',
-        'site-clearance': 'Site Preparation',
-        'rubble-removal': 'Rubble Removal',
-        'other': 'Other'
-    };
-    
-    const whatsappMsg = `*New Quote Request — ARTNY CIVILS*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Service:* ${serviceLabels[service] || service}%0A*Details:* ${message || 'No additional details'}`;
-    
-    window.open(`https://wa.me/27734411697?text=${whatsappMsg}`, '_blank');
-    
-    // Reset form
-    quoteForm.reset();
-    
-    // Show confirmation
-    const btn = quoteForm.querySelector('button[type="submit"]');
-    const originalText = btn.textContent;
-    btn.textContent = 'Opening WhatsApp…';
-    btn.style.background = '#25d366';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.style.color = '';
-    }, 3000);
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
